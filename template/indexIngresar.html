@@ -1,0 +1,40 @@
+<form action="/send/" method="POST" id="sendData" style="align: center">
+    <h1>Pagina de ingreso de datos de gastos - P3_SOA</h1>
+    <div class="row">
+        <h2>Ingreso de gastos</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="Monto">Monto</label>
+                <input name="Monto" id="Monto" class="form-control" data-toggle="popover" data-content="Whitespace or comma-separated list." required></input>
+            </div>
+        </div>
+		<br>
+        <div class="col">
+            <div class="form-group">
+                <label for="Descripción">Descripción</label>
+                <input type="text" name="Descripción" id="Descripción" class="form-control" data-toggle="popover" data-content="Whitespace or comma-separated list." required />
+            </div>
+        </div>
+		<br>
+        <div class="col">
+            <div class="form-group">
+                <label for="Nombre_Responsable">Nombre del responsable</label>
+                <input type="text" name="Nombre_Responsable" id="Nombre_Responsable" class="form-control" data-toggle="popover" data-content="Only include tests matching this filter. Use % as wildcard. Whitespace or comma-separated list. Example: ARR%. Leave blank to include all." />
+            </div>
+        </div>
+		<br>
+		<div class="col">
+            <div class="form-group">
+                <label for="Departamento">Departamento</label>
+                <input type="text" name="Departamento" id="Departamento" class="form-control" data-toggle="popover" data-content="Whitespace or comma-separated list." required />
+			</div>
+		</div>
+		<br>
+
+    <div class="form-group row">
+        <input type="submit" value="Ingresar datos" name="sending_data" class="btn btn-success" />
+    </div>
+</form>
+

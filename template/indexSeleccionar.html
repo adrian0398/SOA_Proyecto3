@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina donde se muestran los datos</title>
+</head>
+
+<form action="/selectMonth/" method="POST" id="selectMonth" style="align: center">
+	<body>
+	
+	<div class="form-group">
+		<label for="month">Meses</label>
+		<select name="month" id="month" value="11" class="form-control">
+			{% for month in months %}
+			<option value="{{month}}">{{month}}</option>
+			{% endfor %}
+		</select>
+	</div>
+
+	{% for table in tables %}
+				{{titles[loop.index-1]}}
+				{{ table|safe }}
+				<br>
+	{% endfor %}
+	
+	{% if total %}
+		
+        <h3>Total gastado el mes de {{month_selected}} : {{total}} </h3>
+
+	{% endif %}
+	
+	<div class="form-group row">
+        <input type="submit" value="Submit" class="btn btn-success" />
+    </div>
+	
+	</body>
+</form>
+</html>
