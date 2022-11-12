@@ -1,0 +1,36 @@
+- Create proyect in Google Cloud
+- Set zone
+	gcloud config set compute/zone us-central1-f
+- Clone repo
+- Install dependecies 
+- Create VM instances
+* gcloud compute instances create getdata \
+    --machine-type=f1-micro \
+    --image=debian-9-stretch-v20190905 \
+    --image-project=debian-cloud \
+    --tags=getdata \
+    --metadata=startup-script='#!/bin/bash
+		pip install pandas'
+
+* gcloud compute instances create setdata \
+    --machine-type=f1-micro \
+    --image=debian-9-stretch-v20190905 \
+    --image-project=debian-cloud \
+    --tags=setdata \
+    --metadata=startup-script='#!/bin/bash
+		pip install pandas'
+- Create instances template 
+
+* gcloud compute instance-templates create p3-read \
+    --source-instance=getdata
+
+* gcloud compute instance-templates create p3-read \
+    --source-instance=getdata
+
+- Create MIG
+*gcloud compute instance-groups managed create p3-read-mig     --base-instance-name p3-read     --size 2     --template p3-read
+
+- Missing 
+* Load Balancer
+* Scaling Compute Engine
+* Code integration
