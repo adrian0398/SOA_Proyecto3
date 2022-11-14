@@ -42,4 +42,4 @@ def tables():
     return render_template('indexSeleccionar.html', tables=table_list, titles=title_list, total=Total, months=months_list, month_selected=request.form['month'])
 
 if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=8000)
+        app.run(host='0.0.0.0', port=9000)
