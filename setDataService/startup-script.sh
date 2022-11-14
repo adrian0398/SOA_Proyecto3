@@ -22,9 +22,8 @@ apt-get install -yq git supervisor python python-pip python3-distutils
 pip install --upgrade pip virtualenv
 
 # Fetch source code
-export HOME=/root
-git clone https://github.com/adrian0398/SOA_Proyecto3.git /opt/app
-
+mkdir /opt/app
+gsutil -m cp -r gs://buck-soa-final-368610/SOA_Proyecto3/* /opt/app
 # Install Cloud Ops Agent
 sudo bash /opt/app/setDataService/add-google-cloud-ops-agent-repo.sh --also-install
 
